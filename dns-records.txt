@@ -1,0 +1,7 @@
+{"type":"MX","name":"@","value":"mx1.hostinger.com","priority":5,"ttl":60}
+{"type":"MX","name":"@","value":"mx2.hostinger.com","priority":10,"ttl":60}
+{"type":"TXT","name":"@","value":"v=spf1 include:_spf.mail.hostinger.com ~all","ttl":60}
+{"type":"CNAME","name":"hostingermail-a._domainkey","value":"hostingermail-a.dkim.mail.hostinger.com.","ttl":60}
+{"type":"CNAME","name":"hostingermail-b._domainkey","value":"hostingermail-b.dkim.mail.hostinger.com.","ttl":60}
+{"type":"CNAME","name":"hostingermail-c._domainkey","value":"hostingermail-c.dkim.mail.hostinger.com.","ttl":60}
+{"type":"TXT","name":"_dmarc","value":"v=DMARC1; p=none; rua=mailto:dmarc@nycnireland.ie","ttl":60}
