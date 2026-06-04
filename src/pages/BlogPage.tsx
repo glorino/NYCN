@@ -6,6 +6,35 @@ const POSTS_PER_PAGE = 6;
 
 const posts = [
   {
+    id: 0,
+    title: 'Oronsaye Inaugurates NYCN Ireland Executives As Chapter Adopts Articles Of Association',
+    excerpt: 'The NYCN Ireland Chapter inaugurates newly appointed Executive Council members and adopts Articles of Association during a strategic meeting in Dublin.',
+    content: `The National Youth Council of Nigeria (NYCN), Ireland Chapter, has inaugurated newly appointed members of its Executive Council (EXCO) during a strategic meeting held in Dublin on May 29, 2026.
+
+The meeting was presided over by the Youth Ambassador of the chapter, Mr. Jeffrey Oronsaye, who reaffirmed the council's commitment to strengthening youth leadership and advancing the interests of Nigerians residing in Ireland.
+
+During the ceremony, letters of appointment were officially presented to the appointees, marking the commencement of their responsibilities within the chapter, and were charged with upholding the ideals of the organization and contributing meaningfully to its growth and development.
+
+In a significant move aimed at enhancing institutional governance, the Executive Council adopted the Chapter's Articles of Association as its official governing framework. The document is expected to provide clear guidelines for the administration, operations, and activities of the chapter, ensuring transparency, accountability, and effective leadership in all its engagements.
+
+The meeting also featured extensive deliberations on a range of upcoming programmes and events designed to promote youth development, cultural integration, and community engagement, while members discussed strategies and modalities for the successful planning and implementation of these initiatives, emphasizing the importance of collaboration and active participation among Nigerian youths in Ireland.
+
+As part of the meeting's agenda, Mr. Oronsaye delivered a thought-provoking lecture titled "The Sacrifice for Leadership" where he highlighted the values of dedication, discipline, selflessness, and commitment required for effective leadership.
+
+The Executive Council also expressed deep concern over the recent abduction of teachers and schoolchildren in Oyo State, Nigeria. They condemned the incident and called on the Federal Government of Nigeria, as well as relevant security agencies, to intensify efforts toward securing the immediate and safe release of the victims.
+
+The meeting concluded with a dinner session that provided an avenue for networking, fellowship, and the strengthening of relationships among members. Reaffirming its dedication to youth empowerment, leadership development, and community service, the NYCN Ireland Chapter pledged to continue implementing initiatives that positively impact Nigerians living in Ireland while fostering stronger ties with their homeland.`,
+    author: 'NYCN Ireland Communications',
+    date: 'May 31, 2026',
+    readTime: '5 min read',
+    category: 'Leadership',
+    image: '/blog/exco-meeting-1.jpeg',
+    gallery: [
+      '/blog/exco-meeting-1.jpeg',
+      '/blog/exco-meeting-2.jpeg',
+    ],
+  },
+  {
     id: 1,
     title: 'NYCN Ireland Community Gathering: Unity in Action',
     excerpt: 'Highlights from our recent community gathering showcasing the strength, unity, and vibrant spirit of the NYCN Ireland family.',
@@ -262,6 +291,18 @@ const BlogPage = () => {
                 {expandedPost === post.id && (
                   <div className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line mb-4 border-t border-border pt-4">
                     {post.content}
+                    {post.gallery && post.gallery.length > 0 && (
+                      <div className="mt-6 space-y-3">
+                        {post.gallery.map((img: string, idx: number) => (
+                          <img
+                            key={idx}
+                            src={img}
+                            alt={`${post.title} - Photo ${idx + 1}`}
+                            className="w-full rounded-lg border border-border"
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
 
