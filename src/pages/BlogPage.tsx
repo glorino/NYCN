@@ -44,7 +44,7 @@ For more information and support resources, visit www.nycnireland.ie
     date: 'May 31, 2026',
     readTime: '3 min read',
     category: 'Health',
-    image: '/blog/no-tobacco-day.jpeg',
+    image: '/blog/no-tobacco-day-2026.jpeg',
   },
   {
     id: 0,
@@ -70,10 +70,6 @@ The meeting concluded with a dinner session that provided an avenue for networki
     readTime: '5 min read',
     category: 'Leadership',
     image: '/blog/exco-meeting-1.jpeg',
-    gallery: [
-      '/blog/exco-meeting-1.jpeg',
-      '/blog/exco-meeting-2.jpeg',
-    ],
   },
   {
     id: 1,
