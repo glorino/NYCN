@@ -6,6 +6,47 @@ const POSTS_PER_PAGE = 6;
 
 const posts = [
   {
+    id: 12,
+    title: 'World No Tobacco Day 2026: Unmasking the Appeal',
+    excerpt: 'NYCN Ireland joins the global fight against tobacco addiction. Learn how to counter nicotine influence and choose a healthier future.',
+    content: `May 31, 2026 — World No Tobacco Day
+
+Theme: Unmasking the Appeal — Countering Nicotine and Tobacco Addiction
+
+The National Youth Council of Nigeria (NYCN), Ireland Chapter, joins the global community in observing World No Tobacco Day 2026. This year's campaign focuses on unmasking the deceptive appeal of tobacco and nicotine products, particularly targeting young people.
+
+THE TRUTH ABOUT TOBACCO
+
+Tobacco and nicotine are addictive and harmful. Despite marketing tactics and peer pressure, the reality is clear: smoking and vaping cause serious health damage, including heart disease, lung cancer, and respiratory problems.
+
+THE KEY MESSAGES:
+
+KNOW THE TRUTH — Tobacco and nicotine are addictive and harmful. Don't let marketing fool you.
+
+BREAK THE ILLUSION — Don't be fooled by marketing and peer pressure. The tobacco industry spends billions to make their products look appealing, but the consequences are devastating.
+
+CHOOSE HEALTH — A smoke-free life means a stronger, brighter future. Your health is your greatest asset.
+
+EMPOWER YOUR GENERATION — Stand up. Speak out. Inspire change. Young people have the power to end the tobacco epidemic.
+
+BE PART OF THE MOVEMENT
+
+Say NO to tobacco. Say YES to life.
+
+HEALTHY YOUTH. STRONG COMMUNITIES. BETTER TOMORROW.
+
+NYCN Ireland Chapter is committed to promoting health awareness and empowering young Nigerians in Ireland to make informed choices about their well-being. We encourage all members and friends of our community to join the movement against tobacco.
+
+For more information and support resources, visit www.nycnireland.ie
+
+#NoTobacco #WorldNoTobaccoDay #NYCNIreland #HealthyYouth`,
+    author: 'NYCN Ireland Health & Wellness Team',
+    date: 'May 31, 2026',
+    readTime: '3 min read',
+    category: 'Health',
+    image: '/blog/no-tobacco-day.jpeg',
+  },
+  {
     id: 0,
     title: 'Oronsaye Inaugurates NYCN Ireland Executives As Chapter Adopts Articles Of Association',
     excerpt: 'The NYCN Ireland Chapter inaugurates newly appointed Executive Council members and adopts Articles of Association during a strategic meeting in Dublin.',
