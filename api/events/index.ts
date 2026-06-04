@@ -4,6 +4,19 @@
 // In-memory storage (will reset on each deployment, but works reliably)
 let events: any[] = [
   {
+    id: '9',
+    title: 'Executive Leadership Training – Leadership Summit',
+    date: '2026-06-18',
+    time: '7:00 PM - 9:00 PM Daily',
+    location: 'Online (Zoom)',
+    description: `LEADERSHIP SUMMIT\nExecutive Leadership Training\nTheme: Raising Visionary Leaders for Kingdom & Societal Impact\n\nThe National Youth Council of Nigeria (NYCN), Ireland Chapter, in partnership with Global Network of Youths Fellowship, presents a 3-day Executive Leadership Training summit.\n\nSPEAKERS:\n• Dr. Ekundayo E. Olorundare — Leadership Coach & Relationship Expert\n• Pst. Moses Abiona — NLP Certified Practitioner & Life Coach\n• Mr. Jeffrey Oronsaye — Ambassador, National Youth Council of Nigeria, Ireland Chapter\n\nWHO SHOULD ATTEND:\n• Campus Leaders\n• Youth Leaders\n• Entrepreneurs\n• Professionals & Team Leaders\n• Emerging Leaders\n• Young Ministers\n\nRegistration is FREE.\n\nDon't miss this opportunity to develop your leadership skills and connect with like-minded young leaders across Ireland and beyond.`,
+    image: '/events/leadership-summit-2026.jpeg',
+    category: 'Training / Leadership Summit',
+    attendees: '',
+    upcoming: true,
+    created_at: new Date().toISOString(),
+  },
+  {
     id: '8',
     title: 'Executive Council Meeting – Bembela TV News Report',
     date: '2026-05-29',

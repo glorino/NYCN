@@ -4,6 +4,17 @@ import { useEffect, useRef, useState } from 'react';
 
 const events = [
   {
+    title: 'Executive Leadership Training – Leadership Summit',
+    date: 'June 18-20, 2026',
+    time: '7:00 PM - 9:00 PM Daily',
+    location: 'Online (Zoom)',
+    description: `LEADERSHIP SUMMIT\nExecutive Leadership Training\nTheme: Raising Visionary Leaders for Kingdom & Societal Impact\n\nThe National Youth Council of Nigeria (NYCN), Ireland Chapter, in partnership with Global Network of Youths Fellowship, presents a 3-day Executive Leadership Training summit.\n\nSPEAKERS:\n• Dr. Ekundayo E. Olorundare — Leadership Coach & Relationship Expert\n• Pst. Moses Abiona — NLP Certified Practitioner & Life Coach\n• Mr. Jeffrey Oronsaye — Ambassador, National Youth Council of Nigeria, Ireland Chapter\n\nWHO SHOULD ATTEND:\n• Campus Leaders\n• Youth Leaders\n• Entrepreneurs\n• Professionals & Team Leaders\n• Emerging Leaders\n• Young Ministers\n\nRegistration is FREE.\n\nDon't miss this opportunity to develop your leadership skills and connect with like-minded young leaders across Ireland and beyond.`,
+    image: '/events/leadership-summit-2026.jpeg',
+    category: 'Training / Leadership Summit',
+    registrationLink: 'https://forms.gle/9ddQMHyaDmG3p7Rn9',
+    upcoming: true,
+  },
+  {
     title: 'Executive Council Meeting – Bembela TV News Report',
     date: 'May 29, 2026',
     time: 'All Day',
