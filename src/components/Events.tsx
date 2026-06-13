@@ -4,6 +4,16 @@ import { useEffect, useRef, useState } from 'react';
 
 const events = [
   {
+    title: 'Ireland Diaspora Youth Summit 2026',
+    date: 'August 8, 2026',
+    time: 'Virtual Summit',
+    location: 'Online (Virtual)',
+    description: `IRELAND DIASPORA YOUTH SUMMIT 2026\n\nThe National Youth Council of Nigeria (NYCN) Ireland Chapter is delighted to invite all Nigerian youths across Ireland to the Diaspora Youth Summit 2026, a unique platform designed to connect, empower, inspire, and create opportunities for our community.\n\nTheme: Building Bridges, Shaping Futures: Empowering Diaspora Youths in Ireland\n\nThis summit will bring together young leaders, professionals, entrepreneurs, students, and community stakeholders to discuss the challenges and opportunities facing Nigerian youths in Ireland. Through engaging discussions and practical insights, participants will gain valuable knowledge, build meaningful connections, and explore pathways for personal and professional growth.\n\nWHAT TO EXPECT:\n• Insightful panel discussions\n• Networking opportunities\n• Conversations on education, careers, entrepreneurship, and community development\n• Practical strategies for success and empowerment\n\nDISCUSSION TRACKS:\n\nTrack 1: International Students in Ireland\n• Education & Academic Success\n• Employment & Career Pathways\n• Housing & Cost of Living\n• Cultural Adaptation & Integration\n• Leadership & Community Engagement\n\nTrack 2: Young Entrepreneurs in Ireland\n• Access to Funding & Investment\n• Innovation & Digital Opportunities\n• Business Development & Scaling\n• Mentorship & Networking\n• Building Sustainable Enterprises\n\nTrack 3: Refugees and Asylum Seekers in Ireland\n• Social & Economic Integration\n• Education & Skills Development\n• Employment Opportunities\n• Housing & Community Support\n• Civic Participation & Empowerment\n\nSpeaker announcements coming soon!\n\nThis is a call to all Nigerian youths in Ireland—students, entrepreneurs, professionals, refugees, asylum seekers, and community leaders. Your voice matters, and your participation is important.\n\nOne Diaspora. One Voice. Limitless Possibilities. Together, We Rise!`,
+    image: '/events/diaspora-youth-summit-2026.jpeg',
+    category: 'Youth Summit / Virtual Event',
+    upcoming: true,
+  },
+  {
     title: 'Executive Leadership Training – Leadership Summit',
     date: 'June 18-20, 2026',
     time: '7:00 PM - 9:00 PM Daily',

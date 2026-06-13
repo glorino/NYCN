@@ -110,6 +110,19 @@ export const eventsApi = {
   getDefaultEvents(): Event[] {
     return [
       {
+        id: '10',
+        title: 'Ireland Diaspora Youth Summit 2026',
+        date: '2026-08-08',
+        time: 'Virtual Summit',
+        location: 'Online (Virtual)',
+        description: `IRELAND DIASPORA YOUTH SUMMIT 2026\n\nThe National Youth Council of Nigeria (NYCN) Ireland Chapter is delighted to invite all Nigerian youths across Ireland to the Diaspora Youth Summit 2026, a unique platform designed to connect, empower, inspire, and create opportunities for our community.\n\nTheme: Building Bridges, Shaping Futures: Empowering Diaspora Youths in Ireland\n\nThis summit will bring together young leaders, professionals, entrepreneurs, students, and community stakeholders to discuss the challenges and opportunities facing Nigerian youths in Ireland.\n\nWHAT TO EXPECT:\n• Insightful panel discussions\n• Networking opportunities\n• Conversations on education, careers, entrepreneurship, and community development\n• Practical strategies for success and empowerment\n\nDISCUSSION TRACKS:\n\nTrack 1: International Students in Ireland\n• Education & Academic Success\n• Employment & Career Pathways\n• Housing & Cost of Living\n• Cultural Adaptation & Integration\n\nTrack 2: Young Entrepreneurs in Ireland\n• Access to Funding & Investment\n• Innovation & Digital Opportunities\n• Business Development & Scaling\n\nTrack 3: Refugees and Asylum Seekers in Ireland\n• Social & Economic Integration\n• Education & Skills Development\n• Employment Opportunities\n\nOne Diaspora. One Voice. Limitless Possibilities. Together, We Rise!`,
+        image: '/events/diaspora-youth-summit-2026.jpeg',
+        category: 'Youth Summit / Virtual Event',
+        attendees: '',
+        upcoming: true,
+        created_at: new Date().toISOString(),
+      },
+      {
         id: '9',
         title: 'Executive Leadership Training – Leadership Summit',
         date: '2026-06-18',
