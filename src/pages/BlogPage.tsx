@@ -6,6 +6,27 @@ const POSTS_PER_PAGE = 6;
 
 const posts = [
   {
+    id: 13,
+    title: 'Say NO to Domestic Violence',
+    excerpt: 'Domestic violence has no place in our homes, communities, or society. Every woman, child, and vulnerable adult deserves to live in safety, dignity, and respect.',
+    content: `🚫 Say NO to Domestic Violence!
+
+Domestic violence has no place in our homes, communities, or society. Every woman, child, and vulnerable adult deserves to live in safety, dignity, and respect.
+
+As Nigerian youths in Ireland, we stand united against all forms of abuse and violence. Together, we can raise awareness, support victims, and build a community founded on compassion, equality, and justice.
+
+Join us in creating a safer future for everyone.
+
+🌍 Become part of the movement: www.nycnireland.ie
+
+#EndDomesticViolence #SayNoToAbuse #ProtectWomenAndChildren #SupportVictims #NYCNIreland #CommunitySafety #YouthForChangeCorrecte`,
+    author: 'NYCN Ireland',
+    date: 'June 15, 2026',
+    readTime: '2 min read',
+    category: 'Advocacy',
+    image: '/blog/domestic-violence-2026.jpeg',
+  },
+  {
     id: 12,
     title: 'World No Tobacco Day 2026: Unmasking the Appeal',
     excerpt: 'NYCN Ireland joins the global fight against tobacco addiction. Learn how to counter nicotine influence and choose a healthier future.',
