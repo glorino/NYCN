@@ -6,6 +6,38 @@ const POSTS_PER_PAGE = 6;
 
 const posts = [
   {
+    id: 14,
+    title: 'NYCN Ireland Summer Hangout in Galway',
+    excerpt: 'Nigerian Youths in Galway, it\'s that time again! Come out, connect, have fun, and network with fellow Nigerians at our Summer Hangout in Salthill Park, Galway.',
+    content: `Nigerian Youths in Galway, it's that time again!
+
+Come out, connect, have fun, and network with fellow Nigerians at our Summer Hangout in Salthill Park, Galway. Expect good vibes, music, games, refreshments, and lots more!
+
+DATE: Saturday, July 25th
+TIME: 3:00 PM
+VENUE: Salthill Park, Galway (H91 VF63)
+
+Everyone is welcome! Send us a DM now to register your interest and don't miss out on the fun!
+
+WHAT TO EXPECT:
+• Good vibes and music
+• Games and activities
+• Refreshments
+• Networking with fellow Nigerians
+• And lots more!
+
+This is your chance to connect with the Nigerian community in Galway, make new friends, and enjoy a wonderful summer day outdoors.
+
+Everyone is welcome — bring your friends, family, and good energy!
+
+#NigeriansInGalway #NYCNIreland #NigeriaYouths #SummerHangout #Galway #NigeriansInIreland #ConnectNetworkUnite`,
+    author: 'NYCN Ireland',
+    date: 'July 14, 2026',
+    readTime: '2 min read',
+    category: 'Events',
+    image: '/blog/summer-hangout-galway-2026.jpeg',
+  },
+  {
     id: 13,
     title: 'Say NO to Domestic Violence',
     excerpt: 'Domestic violence has no place in our homes, communities, or society. Every woman, child, and vulnerable adult deserves to live in safety, dignity, and respect.',
