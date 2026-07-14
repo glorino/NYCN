@@ -4,6 +4,17 @@ import { useEffect, useRef, useState } from 'react';
 
 const events = [
   {
+    title: 'African Health Summit – Dublin',
+    date: '2026',
+    time: 'All Day',
+    location: 'Dublin, Ireland',
+    description: `AFRICAN HEALTH SUMMIT – DUBLIN\n\nWe were delighted to attend the African Health Summit in Dublin as a Community Partner.\n\nIt was also a great privilege to join distinguished dignitaries and community leaders, including the Kenyan Ambassador to Ireland, H.E. Ambassador George M. Orina; representatives from Cork County Council; Councillor Uruemu Adejinmi, representing Longford; and Councillor Honore Kamegni, Ireland and representative for Cork South East, and of course Miss Sharon Alozie, Head of Protocol NYCN Ireland Chapter, in presenting prestigious awards to deserving winners.\n\nAttending this remarkable event created valuable opportunities for networking, collaboration, and meaningful conversations about embracing and encouraging youth involvement in healthcare, health, and well-being at all levels.\n\nA special thank you to Olayinka Aremu and all the organisers for believing in the vision and for their dedication to creating a platform that celebrates excellence, strengthens communities, and promotes a healthier future for all.\n\nWe are proud to have been part of this inspiring occasion and look forward to building on the connections and opportunities created.\n\n#AfricanHealthSummit #Dublin #CommunityPartners #Healthcare #YouthInvolvement #HealthAndWellbeing #CommunityEngagement #Networking`,
+    image: '/events/african-health-summit-2026.png',
+    video: '/events/african-health-summit-2026.mp4',
+    category: 'Health Summit / Community Partnership',
+    featured: true,
+  },
+  {
     title: 'Ireland Diaspora Youth Summit 2026',
     date: 'August 8, 2026',
     time: 'Virtual Summit',
