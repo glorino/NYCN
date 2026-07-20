@@ -135,13 +135,13 @@ export const eventsApi = {
     return [
       {
         id: '12',
-        title: 'NYCN Ireland Community Empowerment Forum 2026',
+        title: 'Ireland Diaspora Youth Summit 2026',
         date: '2026-09-26',
         time: '10:00 AM - 4:00 PM',
         location: 'Dublin, Ireland',
-        description: `NYCN IRELAND COMMUNITY EMPOWERMENT FORUM 2026\n\nThe National Youth Council of Nigeria (NYCN) Ireland Chapter cordially invites you to the Community Empowerment Forum 2026 — a day of learning, networking, and community building for Nigerians and friends of Nigeria across Ireland.\n\nTheme: Empowering Youths, Strengthening Communities\n\nWHAT TO EXPECT:\n• Inspiring keynote speakers and panel discussions\n• Practical workshops on careers, entrepreneurship, and well-being\n• Networking with community leaders and professionals\n• Cultural showcase and community celebration\n\nCERTIFICATE OF PARTICIPATION\nA Certificate of Participation will be issued to all registered attendees who take part in the forum. This certificate recognises your engagement and contribution to the NYCN Ireland community.\n\nRegistration is FREE. Spaces are limited — secure your place today!`,
-        image: '/event/WhatsApp Image 2026-07-20 at 1.31.27 PM.jpeg',
-        category: 'Community Forum / Empowerment',
+        description: `IRELAND DIASPORA YOUTH SUMMIT 2026\n\nThe National Youth Council of Nigeria (NYCN) Ireland Chapter cordially invites you to the Ireland Diaspora Youth Summit 2026 — a day of learning, networking, and youth empowerment for Nigerians and friends of Nigeria across Ireland.\n\nTheme: Empowering Youths, Strengthening Communities\n\nWHAT TO EXPECT:\n• Inspiring keynote speakers and panel discussions\n• Practical workshops on careers, entrepreneurship, and well-being\n• Networking with youth leaders and professionals\n• Cultural showcase and community celebration\n\nCERTIFICATE OF PARTICIPATION\nA Certificate of Participation will be issued to all registered attendees who take part in the summit. This certificate recognises your engagement and contribution to the NYCN Ireland community.\n\nRegistration is FREE. Spaces are limited — secure your place today!`,
+        image: '/event/community-empowerment-forum-2026.jpeg',
+        category: 'Youth Summit / Diaspora',
         attendees: '',
         upcoming: true,
         certificate: true,
