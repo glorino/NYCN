@@ -6,6 +6,23 @@ const POSTS_PER_PAGE = 6;
 
 const posts = [
   {
+    id: 15,
+    title: 'Youth Convention and Gala Dinner 2026',
+    excerpt: 'Join NYCN Ireland for its Youth Convention and Gala Dinner 2026 — an evening of awareness, advocacy, culture, and celebration under the theme "Awareness to Action: United Against Domestic Violence, Safeguarding Children and Vulnerable Adults."',
+    content: `The National Youth Council of Nigeria (NYCN) Ireland Chapter is delighted to announce its Youth Convention and Gala Dinner 2026, taking place on Saturday, 19 December 2026, at Faughs GAA Club, Wellington Lane, Templeogue, Dublin 6W, from 3:00 PM until late.
+
+This year's theme, "Awareness to Action: United Against Domestic Violence, Safeguarding Children and Vulnerable Adults," highlights our commitment to promoting awareness, advocacy, and collective responsibility in building safer communities.
+
+The event will feature inspiring discussions, networking opportunities, cultural celebrations, and outstanding entertainment from Obaro Tiblaze, Porkupyne, The Pharmaxist, and MC Ademola.
+
+Join us as we celebrate the achievements of Nigerian youths in Ireland while fostering meaningful conversations that inspire positive change. We look forward to welcoming you for an evening of learning, entertainment, and community impact.`,
+    author: 'NYCN Ireland',
+    date: 'July 20, 2026',
+    readTime: '3 min read',
+    category: 'Events',
+    image: '/blog/youth-convention-gala-2026.jpeg',
+  },
+  {
     id: 14,
     title: 'NYCN Ireland Summer Hangout in Galway',
     excerpt: 'Nigerian Youths in Galway, it\'s that time again! Come out, connect, have fun, and network with fellow Nigerians at our Summer Hangout in Salthill Park, Galway.',
