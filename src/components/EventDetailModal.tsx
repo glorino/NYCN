@@ -1,21 +1,23 @@
 import { useState } from 'react';
-import { 
-  X, 
-  Calendar, 
-  Clock, 
-  MapPin, 
-  Users, 
-  Share2, 
-  Heart, 
+import {
+  X,
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  Share2,
+  Heart,
   ArrowRight,
   Star,
-  Ticket
+  Ticket,
+  Award
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
+import EventRegistrationForm from '@/components/EventRegistrationForm';
 
 interface EventDetailModalProps {
   event: any;
@@ -27,7 +29,6 @@ interface EventDetailModalProps {
 
 const EventDetailModal = ({ event, isOpen, onClose, isSaved, onToggleSave }: EventDetailModalProps) => {
   const { toast } = useToast();
-  const [isRegistering, setIsRegistering] = useState(false);
 
   const handleShare = async () => {
     if (navigator.share) {
@@ -47,16 +48,6 @@ const EventDetailModal = ({ event, isOpen, onClose, isSaved, onToggleSave }: Eve
         description: "Event link copied to clipboard",
       });
     }
-  };
-
-  const handleRegister = async () => {
-    setIsRegistering(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsRegistering(false);
-    toast({
-      title: "Registration Successful!",
-      description: "You've been registered for this event. Check your email for confirmation.",
-    });
   };
 
   if (!event) return null;
@@ -108,6 +99,12 @@ const EventDetailModal = ({ event, isOpen, onClose, isSaved, onToggleSave }: Eve
               {event.category && (
                 <Badge variant="secondary">{event.category}</Badge>
               )}
+              {event.certificate && (
+                <Badge className="bg-gold-gradient text-foreground">
+                  <Award className="w-3 h-3 mr-1" />
+                  Certificate of Participation
+                </Badge>
+              )}
             </div>
 
             {/* Title */}
@@ -133,25 +130,6 @@ const EventDetailModal = ({ event, isOpen, onClose, isSaved, onToggleSave }: Eve
 
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-2 mb-6">
-              <Button 
-                onClick={handleRegister}
-                disabled={isRegistering}
-                className="variant-gold"
-              >
-                {isRegistering ? (
-                  <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                    Registering...
-                  </div>
-                ) : (
-                  <div className="flex items-center gap-2">
-                    <Ticket className="w-4 h-4" />
-                    Register Now
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                )}
-              </Button>
-              
               <Button
                 variant="outline"
                 onClick={onToggleSave}
@@ -160,11 +138,29 @@ const EventDetailModal = ({ event, isOpen, onClose, isSaved, onToggleSave }: Eve
                 <Heart className={`w-4 h-4 mr-1 ${isSaved ? 'fill-current' : ''}`} />
                 {isSaved ? 'Saved' : 'Save'}
               </Button>
-              
+
               <Button variant="outline" onClick={handleShare}>
                 <Share2 className="w-4 h-4 mr-1" />
                 Share
               </Button>
+            </div>
+
+            {/* Registration Form */}
+            <div className="mb-8 border border-gold/20 rounded-xl p-4 sm:p-5 bg-card/50">
+              <div className="flex items-center gap-2 mb-1">
+                <Ticket className="w-5 h-5 text-gold" />
+                <h2 className="font-display text-lg font-bold text-foreground">Register for this Event</h2>
+              </div>
+              {event.certificate && (
+                <div className="flex items-center gap-1.5 text-sm text-muted-foreground mb-4">
+                  <Award className="w-4 h-4 text-gold" />
+                  <span>Certificate of Participation will be issued to attendees.</span>
+                </div>
+              )}
+              <EventRegistrationForm
+                eventId={event.id}
+                eventTitle={event.title}
+              />
             </div>
 
             {/* Full Description */}

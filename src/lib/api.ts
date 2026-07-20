@@ -14,6 +14,7 @@ interface Event {
   category?: string;
   attendees?: string;
   featured?: boolean;
+  certificate?: boolean;
   created_at?: string;
 }
 
@@ -106,9 +107,46 @@ export const eventsApi = {
     }
   },
 
+  // Register for an event
+  async registerForEvent(registration: {
+    firstName: string;
+    email: string;
+    phone: string;
+    expectations?: string;
+    eventId: string;
+    eventTitle?: string;
+  }): Promise<{ success: boolean; message: string }> {
+    const response = await fetch('/api/event-registration', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(registration),
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({}));
+      throw new Error(error.error || 'Failed to register for event');
+    }
+
+    return response.json();
+  },
+
   // Fallback default events
   getDefaultEvents(): Event[] {
     return [
+      {
+        id: '12',
+        title: 'NYCN Ireland Community Empowerment Forum 2026',
+        date: '2026-09-26',
+        time: '10:00 AM - 4:00 PM',
+        location: 'Dublin, Ireland',
+        description: `NYCN IRELAND COMMUNITY EMPOWERMENT FORUM 2026\n\nThe National Youth Council of Nigeria (NYCN) Ireland Chapter cordially invites you to the Community Empowerment Forum 2026 — a day of learning, networking, and community building for Nigerians and friends of Nigeria across Ireland.\n\nTheme: Empowering Youths, Strengthening Communities\n\nWHAT TO EXPECT:\n• Inspiring keynote speakers and panel discussions\n• Practical workshops on careers, entrepreneurship, and well-being\n• Networking with community leaders and professionals\n• Cultural showcase and community celebration\n\nCERTIFICATE OF PARTICIPATION\nA Certificate of Participation will be issued to all registered attendees who take part in the forum. This certificate recognises your engagement and contribution to the NYCN Ireland community.\n\nRegistration is FREE. Spaces are limited — secure your place today!`,
+        image: '/event/WhatsApp Image 2026-07-20 at 1.31.27 PM.jpeg',
+        category: 'Community Forum / Empowerment',
+        attendees: '',
+        upcoming: true,
+        certificate: true,
+        created_at: new Date().toISOString(),
+      },
       {
         id: '11',
         title: 'African Health Summit – Dublin',
