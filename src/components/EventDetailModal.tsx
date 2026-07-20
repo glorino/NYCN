@@ -31,21 +31,22 @@ const EventDetailModal = ({ event, isOpen, onClose, isSaved, onToggleSave }: Eve
   const { toast } = useToast();
 
   const handleShare = async () => {
+    const shareUrl = `${window.location.origin}${window.location.pathname}?event=${event.id}`;
     if (navigator.share) {
       try {
         await navigator.share({
           title: event.title,
           text: event.description,
-          url: window.location.href
+          url: shareUrl
         });
       } catch (error) {
         console.log('Share cancelled');
       }
     } else {
-      navigator.clipboard.writeText(window.location.href);
+      navigator.clipboard.writeText(shareUrl);
       toast({
         title: "Link Copied!",
-        description: "Event link copied to clipboard",
+        description: "Registration link copied to clipboard",
       });
     }
   };

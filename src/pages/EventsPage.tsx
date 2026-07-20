@@ -29,9 +29,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { eventsApi } from '@/lib/api';
 import EventDetailModal from '@/components/EventDetailModal';
 import { useToast } from '@/hooks/use-toast';
+import { useSearchParams } from 'react-router-dom';
 
 const EventsPage = () => {
   const { toast } = useToast();
+  const [searchParams] = useSearchParams();
   const [events, setEvents] = useState<any[]>([]);
   const [filteredEvents, setFilteredEvents] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -56,6 +58,15 @@ const EventsPage = () => {
     try {
       const data = await eventsApi.getEvents();
       setEvents(data);
+
+      const eventId = searchParams.get('event');
+      if (eventId) {
+        const target = data.find((e: any) => String(e.id) === String(eventId));
+        if (target) {
+          setSelectedEvent(target);
+          setIsModalOpen(true);
+        }
+      }
     } catch (err) {
       console.error('Error fetching events:', err);
     } finally {
