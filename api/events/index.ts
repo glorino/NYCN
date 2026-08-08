@@ -4,20 +4,6 @@
 // In-memory storage (will reset on each deployment, but works reliably)
 let events: any[] = [
   {
-    id: '12',
-    title: 'Ireland Diaspora Youth Summit 2026',
-    date: '2026-09-26',
-    time: '10:00 AM - 4:00 PM',
-    location: 'Dublin, Ireland',
-    description: `IRELAND DIASPORA YOUTH SUMMIT 2026\n\nThe National Youth Council of Nigeria (NYCN) Ireland Chapter cordially invites you to the Ireland Diaspora Youth Summit 2026 — a day of learning, networking, and youth empowerment for Nigerians and friends of Nigeria across Ireland.\n\nTheme: Empowering Youths, Strengthening Communities\n\nWHAT TO EXPECT:\n• Inspiring keynote speakers and panel discussions\n• Practical workshops on careers, entrepreneurship, and well-being\n• Networking with youth leaders and professionals\n• Cultural showcase and community celebration\n\nCERTIFICATE OF PARTICIPATION\nA Certificate of Participation will be issued to all registered attendees who take part in the summit. This certificate recognises your engagement and contribution to the NYCN Ireland community.\n\nRegistration is FREE. Spaces are limited — secure your place today!`,
-    image: '/event/community-empowerment-forum-2026.jpeg',
-    category: 'Youth Summit / Diaspora',
-    attendees: '',
-    upcoming: true,
-    certificate: true,
-    created_at: new Date().toISOString(),
-  },
-  {
     id: '10',
     title: 'NYCN Ireland Chapter Holds Diaspora Youth Summit 2026',
     date: '2026-08-08',
