@@ -200,7 +200,7 @@ const EventDetailModal = ({ event, isOpen, onClose, isSaved, onToggleSave }: Eve
                       <img
                         src={speaker.image}
                         alt={speaker.name}
-                        className="w-full h-48 object-cover"
+                        className="w-full h-56 object-cover object-top"
                       />
                       <div className="p-3">
                         <p className="font-semibold text-foreground text-sm">{speaker.name}</p>

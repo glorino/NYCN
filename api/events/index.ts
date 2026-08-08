@@ -18,20 +18,6 @@ let events: any[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: '11',
-    title: 'African Health Summit – Dublin',
-    date: '2026',
-    time: 'All Day',
-    location: 'Dublin, Ireland',
-    description: `AFRICAN HEALTH SUMMIT – DUBLIN\n\nWe were delighted to attend the African Health Summit in Dublin as a Community Partner.\n\nIt was also a great privilege to join distinguished dignitaries and community leaders, including the Kenyan Ambassador to Ireland, H.E. Ambassador George M. Orina; representatives from Cork County Council; Councillor Uruemu Adejinmi, representing Longford; and Councillor Honore Kamegni, Ireland and representative for Cork South East, and of course Miss Sharon Alozie, Head of Protocol NYCN Ireland Chapter, in presenting prestigious awards to deserving winners.\n\nAttending this remarkable event created valuable opportunities for networking, collaboration, and meaningful conversations about embracing and encouraging youth involvement in healthcare, health, and well-being at all levels.\n\nA special thank you to Olayinka Aremu and all the organisers for believing in the vision and for their dedication to creating a platform that celebrates excellence, strengthens communities, and promotes a healthier future for all.\n\nWe are proud to have been part of this inspiring occasion and look forward to building on the connections and opportunities created.\n\n#AfricanHealthSummit #Dublin #CommunityPartners #Healthcare #YouthInvolvement #HealthAndWellbeing #CommunityEngagement #Networking`,
-    image: '/events/african-health-summit-2026.png',
-    video: '/events/african-health-summit-2026.mp4',
-    category: 'Health Summit / Community Partnership',
-    attendees: '',
-    featured: true,
-    created_at: new Date().toISOString(),
-  },
-  {
     id: '10',
     title: 'NYCN Ireland Chapter Holds Diaspora Youth Summit 2026',
     date: '2026-08-08',
@@ -41,13 +27,13 @@ let events: any[] = [
 
 DUBLIN, Ireland — August 8, 2026: The National Youth Council of Nigeria (NYCN), Ireland Chapter, has successfully hosted the Ireland Diaspora Youth Summit 2026 in Dublin, bringing together Nigerian youths, students, entrepreneurs and professionals from across Ireland.
 
-Held as part of activities marking International Youth Day 2026, the summit, themed "Connect, Empower, Innovate, Impact," provided a platform for participants to discuss key issues affecting Nigerians in Ireland while exploring opportunities for education, employment, entrepreneurship, integration and community development.
+Held as part of activities marking International Youth Day 2026, the summit, themed "Connect, Empower, Innovate, Impact," provided a platform for participants to discuss key issues affecting Nigerans in Ireland while exploring opportunities for education, employment, entrepreneurship, integration and community development.
 
 The summit featured three major sessions.
 
 The first session, led by Ambassador Jeffrey Oronsaye, focused on "Refugees and Asylum Seekers in Ireland." He addressed issues around integration, access to education and employment, housing opportunities and the importance of community support in empowering vulnerable members of the diaspora.
 
-The second session featured Dr. Adedayo Adeneji Oseni, who spoke on "International Students in Ireland." He highlighted academic success, career development, leadership, cultural adaptation and integration, while encouraging students to make positive use of available opportunities and contribute meaningfully to Irish society.
+The second session featured Dr. Adedayo Adeneji Oseni, who spoke on "International Students in Ireland." She highlighted academic success, career development, leadership, cultural adaptation and integration, while encouraging students to make positive use of available opportunities and contribute meaningfully to Irish society.
 
 The final session, delivered by Ademola Daniel, Esq., focused on "Young Entrepreneurs in Ireland." He shared practical insights on entrepreneurship, innovation, mentorship, funding opportunities, business development and building sustainable enterprises.
 
@@ -63,6 +49,20 @@ The summit ended with a renewed call for unity and collective progress among Nig
     ],
     category: 'Youth Summit / Diaspora',
     attendees: '',
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: '11',
+    title: 'African Health Summit – Dublin',
+    date: '2026',
+    time: 'All Day',
+    location: 'Dublin, Ireland',
+    description: `AFRICAN HEALTH SUMMIT – DUBLIN\n\nWe were delighted to attend the African Health Summit in Dublin as a Community Partner.\n\nIt was also a great privilege to join distinguished dignitaries and community leaders, including the Kenyan Ambassador to Ireland, H.E. Ambassador George M. Orina; representatives from Cork County Council; Councillor Uruemu Adejinmi, representing Longford; and Councillor Honore Kamegni, Ireland and representative for Cork South East, and of course Miss Sharon Alozie, Head of Protocol NYCN Ireland Chapter, in presenting prestigious awards to deserving winners.\n\nAttending this remarkable event created valuable opportunities for networking, collaboration, and meaningful conversations about embracing and encouraging youth involvement in healthcare, health, and well-being at all levels.\n\nA special thank you to Olayinka Aremu and all the organisers for believing in the vision and for their dedication to creating a platform that celebrates excellence, strengthens communities, and promotes a healthier future for all.\n\nWe are proud to have been part of this inspiring occasion and look forward to building on the connections and opportunities created.\n\n#AfricanHealthSummit #Dublin #CommunityPartners #Healthcare #YouthInvolvement #HealthAndWellbeing #CommunityEngagement #Networking`,
+    image: '/events/african-health-summit-2026.png',
+    video: '/events/african-health-summit-2026.mp4',
+    category: 'Health Summit / Community Partnership',
+    attendees: '',
+    featured: true,
     created_at: new Date().toISOString(),
   },
   {
