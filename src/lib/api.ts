@@ -163,15 +163,36 @@ export const eventsApi = {
       },
       {
         id: '10',
-        title: 'Ireland Diaspora Youth Summit 2026',
+        title: 'NYCN Ireland Chapter Holds Diaspora Youth Summit 2026',
         date: '2026-08-08',
-        time: 'Virtual Summit',
-        location: 'Online (Virtual)',
-        description: `IRELAND DIASPORA YOUTH SUMMIT 2026\n\nThe National Youth Council of Nigeria (NYCN) Ireland Chapter is delighted to invite all Nigerian youths across Ireland to the Diaspora Youth Summit 2026, a unique platform designed to connect, empower, inspire, and create opportunities for our community.\n\nTheme: Building Bridges, Shaping Futures: Empowering Diaspora Youths in Ireland\n\nThis summit will bring together young leaders, professionals, entrepreneurs, students, and community stakeholders to discuss the challenges and opportunities facing Nigerian youths in Ireland.\n\nWHAT TO EXPECT:\n• Insightful panel discussions\n• Networking opportunities\n• Conversations on education, careers, entrepreneurship, and community development\n• Practical strategies for success and empowerment\n\nDISCUSSION TRACKS:\n\nTrack 1: International Students in Ireland\n• Education & Academic Success\n• Employment & Career Pathways\n• Housing & Cost of Living\n• Cultural Adaptation & Integration\n\nTrack 2: Young Entrepreneurs in Ireland\n• Access to Funding & Investment\n• Innovation & Digital Opportunities\n• Business Development & Scaling\n\nTrack 3: Refugees and Asylum Seekers in Ireland\n• Social & Economic Integration\n• Education & Skills Development\n• Employment Opportunities\n\nOne Diaspora. One Voice. Limitless Possibilities. Together, We Rise!`,
-        image: '/events/diaspora-youth-summit-2026.jpeg',
-        category: 'Youth Summit / Virtual Event',
+        time: 'All Day',
+        location: 'Dublin, Ireland',
+        description: `NYCN IRELAND CHAPTER HOLDS DIASPORA YOUTH SUMMIT 2026
+
+DUBLIN, Ireland — August 8, 2026: The National Youth Council of Nigeria (NYCN), Ireland Chapter, has successfully hosted the Ireland Diaspora Youth Summit 2026 in Dublin, bringing together Nigerian youths, students, entrepreneurs and professionals from across Ireland.
+
+Held as part of activities marking International Youth Day 2026, the summit, themed "Connect, Empower, Innovate, Impact," provided a platform for participants to discuss key issues affecting Nigerans in Ireland while exploring opportunities for education, employment, entrepreneurship, integration and community development.
+
+The summit featured three major sessions.
+
+The first session, led by Ambassador Jeffrey Oronsaye, focused on "Refugees and Asylum Seekers in Ireland." He addressed issues around integration, access to education and employment, housing opportunities and the importance of community support in empowering vulnerable members of the diaspora.
+
+The second session featured Dr. Adedayo Adeneji Oseni, who spoke on "International Students in Ireland." He highlighted academic success, career development, leadership, cultural adaptation and integration, while encouraging students to make positive use of available opportunities and contribute meaningfully to Irish society.
+
+The final session, delivered by Ademola Daniel, Esq., focused on "Young Entrepreneurs in Ireland." He shared practical insights on entrepreneurship, innovation, mentorship, funding opportunities, business development and building sustainable enterprises.
+
+Participants described the summit as informative, inspiring and timely, noting that the sessions provided practical knowledge, fresh perspectives and opportunities for networking and collaboration.
+
+The NYCN Ireland Chapter reaffirmed its commitment to creating platforms that empower Nigerian youths in the diaspora through leadership, education, entrepreneurship, community engagement and collaboration.
+
+The summit ended with a renewed call for unity and collective progress among Nigerian youths in Ireland, with participants echoing the summit's message: One Diaspora, One Voice, Limitless Possibilities. Together, We Rise!`,
+        image: '/events/diaspora-summit-poster-2026.png',
+        images: [
+          '/events/dr-adedayo-adeneji-oseni.jpeg',
+          '/events/ademola-daniel-esq.jpeg',
+        ],
+        category: 'Youth Summit / Diaspora',
         attendees: '',
-        upcoming: true,
         created_at: new Date().toISOString(),
       },
       {
