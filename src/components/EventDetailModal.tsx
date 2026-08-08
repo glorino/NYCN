@@ -190,6 +190,28 @@ const EventDetailModal = ({ event, isOpen, onClose, isSaved, onToggleSave }: Eve
               </div>
             )}
 
+            {/* Speakers */}
+            {event.speakers && event.speakers.length > 0 && (
+              <div className="mb-6">
+                <h2 className="font-display text-lg font-bold text-foreground mb-3">Speakers</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {event.speakers.map((speaker: { name: string; role: string; image: string }, idx: number) => (
+                    <div key={idx} className="rounded-lg border border-border overflow-hidden bg-card">
+                      <img
+                        src={speaker.image}
+                        alt={speaker.name}
+                        className="w-full h-48 object-cover"
+                      />
+                      <div className="p-3">
+                        <p className="font-semibold text-foreground text-sm">{speaker.name}</p>
+                        <p className="text-xs text-muted-foreground">{speaker.role}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Video - Full Size */}
             {event.video && (
               <div className="mb-6">

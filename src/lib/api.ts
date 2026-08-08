@@ -186,10 +186,10 @@ Participants described the summit as informative, inspiring and timely, noting t
 The NYCN Ireland Chapter reaffirmed its commitment to creating platforms that empower Nigerian youths in the diaspora through leadership, education, entrepreneurship, community engagement and collaboration.
 
 The summit ended with a renewed call for unity and collective progress among Nigerian youths in Ireland, with participants echoing the summit's message: One Diaspora, One Voice, Limitless Possibilities. Together, We Rise!`,
-        image: '/events/diaspora-summit-poster-2026.png',
-        images: [
-          '/events/dr-adedayo-adeneji-oseni.jpeg',
-          '/events/ademola-daniel-esq.jpeg',
+        image: '/events/diaspora-summit-poster-2026.jpg',
+        speakers: [
+          { name: 'Dr. Adedayo Adeneji Oseni', role: 'Speaker — International Students in Ireland', image: '/events/dr-adedayo-adeneji-oseni.jpeg' },
+          { name: 'Ademola Daniel, Esq.', role: 'Speaker — Young Entrepreneurs in Ireland', image: '/events/ademola-daniel-esq.jpeg' },
         ],
         category: 'Youth Summit / Diaspora',
         attendees: '',
