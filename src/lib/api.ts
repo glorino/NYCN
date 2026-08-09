@@ -134,40 +134,6 @@ export const eventsApi = {
   getDefaultEvents(): Event[] {
     return [
       {
-        id: '10',
-        title: 'NYCN Ireland Chapter Holds Diaspora Youth Summit 2026',
-        date: '2026-08-08',
-        time: 'All Day',
-        location: 'Dublin, Ireland',
-        description: `NYCN IRELAND CHAPTER HOLDS DIASPORA YOUTH SUMMIT 2026
-
-DUBLIN, Ireland — August 8, 2026: The National Youth Council of Nigeria (NYCN), Ireland Chapter, has successfully hosted the Ireland Diaspora Youth Summit 2026 in Dublin, bringing together Nigerian youths, students, entrepreneurs and professionals from across Ireland.
-
-Held as part of activities marking International Youth Day 2026, the summit, themed "Connect, Empower, Innovate, Impact," provided a platform for participants to discuss key issues affecting Nigerans in Ireland while exploring opportunities for education, employment, entrepreneurship, integration and community development.
-
-The summit featured three major sessions.
-
-The first session, led by Ambassador Jeffrey Oronsaye, focused on "Refugees and Asylum Seekers in Ireland." He addressed issues around integration, access to education and employment, housing opportunities and the importance of community support in empowering vulnerable members of the diaspora.
-
-The second session featured Dr. Adedayo Adeneji Oseni, who spoke on "International Students in Ireland." She highlighted academic success, career development, leadership, cultural adaptation and integration, while encouraging students to make positive use of available opportunities and contribute meaningfully to Irish society.
-
-The final session, delivered by Ademola Daniel, Esq., focused on "Young Entrepreneurs in Ireland." He shared practical insights on entrepreneurship, innovation, mentorship, funding opportunities, business development and building sustainable enterprises.
-
-Participants described the summit as informative, inspiring and timely, noting that the sessions provided practical knowledge, fresh perspectives and opportunities for networking and collaboration.
-
-The NYCN Ireland Chapter reaffirmed its commitment to creating platforms that empower Nigerian youths in the diaspora through leadership, education, entrepreneurship, community engagement and collaboration.
-
-The summit ended with a renewed call for unity and collective progress among Nigerian youths in Ireland, with participants echoing the summit's message: One Diaspora, One Voice, Limitless Possibilities. Together, We Rise!`,
-        image: '/events/diaspora-summit-poster-2026.jpg',
-        speakers: [
-          { name: 'Dr. Adedayo Adeneji Oseni', role: 'Speaker — International Students in Ireland', image: '/events/ademola-daniel-esq.jpeg' },
-          { name: 'Ademola Daniel, Esq.', role: 'Speaker — Young Entrepreneurs in Ireland', image: '/events/dr-adedayo-adeneji-oseni.jpeg' },
-        ],
-        category: 'Youth Summit / Diaspora',
-        attendees: '',
-        created_at: new Date().toISOString(),
-      },
-      {
         id: '11',
         title: 'African Health Summit – Dublin',
         date: '2026',
