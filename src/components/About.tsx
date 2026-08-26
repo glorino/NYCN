@@ -66,10 +66,10 @@ const About = () => {
             About Us
           </span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
-            The NYCN Ireland Chapter
+            Nigeria Youths in Ireland
           </h2>
           <p className="text-lg text-muted-foreground">
-            <strong className="text-foreground">NYCN Ireland Chapter (RN:794640)</strong> serves as the cornerstone for Nigerian youth in Ireland, helping them navigate the challenges of living abroad while staying connected to their roots.
+            <strong className="text-foreground">Nigeria Youths in Ireland</strong> serves as the cornerstone for Nigerian youth in Ireland, helping them navigate the challenges of living abroad while staying connected to their roots.
           </p>
         </div>
 

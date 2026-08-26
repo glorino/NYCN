@@ -61,7 +61,7 @@ const JoinUsModal = ({ open, onOpenChange }: JoinUsModalProps) => {
 
       toast({
         title: "Registration Successful!",
-        description: "Welcome to NYCN Ireland! We'll be in touch soon.",
+        description: "Welcome to Nigeria Youths in Ireland! We'll be in touch soon.",
       });
     } catch (error) {
       console.error('Error submitting membership form:', error);
@@ -96,7 +96,7 @@ const JoinUsModal = ({ open, onOpenChange }: JoinUsModalProps) => {
                 Join Our Community
               </DialogTitle>
               <p className="text-center text-muted-foreground text-sm">
-                Become part of the Nigerian Youth Council Network in Ireland
+                Become part of the Nigeria Youths in Ireland community
               </p>
             </DialogHeader>
 
@@ -210,7 +210,7 @@ const JoinUsModal = ({ open, onOpenChange }: JoinUsModalProps) => {
               Welcome to the Family! 🎉
             </h3>
             <p className="text-muted-foreground mb-2">
-              You're now part of the NYCN Ireland community.
+              You're now part of the Nigeria Youths in Ireland community.
             </p>
             <p className="text-sm text-muted-foreground flex items-center justify-center gap-1 mb-6">
               <Heart className="w-4 h-4 text-destructive fill-destructive" />

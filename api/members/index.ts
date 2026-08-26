@@ -46,7 +46,7 @@ export default function handler(req: any, res: any) {
 
     const userHtml = `<div style="font-family:Arial;max-width:600px;margin:auto;padding:20px;background:#f9f9f9">
       <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);padding:30px;border-radius:10px 10px 0 0;text-align:center">
-        <h1 style="color:#d4a843;margin:0">Welcome to NYCN Ireland!</h1>
+        <h1 style="color:#d4a843;margin:0">Welcome to Nigeria Youths in Ireland!</h1>
       </div>
       <div style="background:white;padding:30px;border-radius:0 0 10px 10px">
         <p>Dear <strong>${fullName}</strong>,</p>
@@ -54,7 +54,7 @@ export default function handler(req: any, res: any) {
         <div style="text-align:center;margin:30px 0">
           <a href="https://nycnireland.ie" style="display:inline-block;background:#d4a843;color:#1a1a2e;padding:14px 40px;border-radius:5px;text-decoration:none;font-weight:bold;font-size:16px;line-height:1.5;border:1px solid #d4a843">Visit Our Website</a>
         </div>
-        <p>Yours in service,<br><strong>NYCN Ireland Team</strong></p>
+        <p>Yours in service,<br><strong>Nigeria Youths in Ireland Team</strong></p>
       </div>
     </div>`;
     const adminHtml = `<div style="font-family:Arial;max-width:600px;margin:auto;padding:20px;background:#f9f9f9">
@@ -72,7 +72,7 @@ export default function handler(req: any, res: any) {
     </div>`;
 
     await Promise.allSettled([
-      sendEmail({ to: email, subject: 'Welcome to NYCN Ireland!', html: userHtml }),
+      sendEmail({ to: email, subject: 'Welcome to Nigeria Youths in Ireland!', html: userHtml }),
       sendEmail({ to: 'info@nycnireland.ie', subject: `New Member: ${fullName}`, html: adminHtml }),
     ]);
 

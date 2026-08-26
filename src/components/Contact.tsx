@@ -120,7 +120,7 @@ const Contact = () => {
                 Let's Connect
               </h3>
               <p className="text-muted-foreground">
-                Whether you're interested in joining NYCN Ireland, partnering with us, or simply want to learn more, we're here to help.
+                Whether you're interested in joining Nigeria Youths in Ireland, partnering with us, or simply want to learn more, we're here to help.
               </p>
             </div>
 
@@ -148,7 +148,7 @@ const Contact = () => {
                 Join Our Community
               </h4>
               <p className="text-primary-foreground/80 text-sm mb-4">
-                Follow us on social media for the latest updates, events, and news from NYCN Ireland.
+                Follow us on social media for the latest updates, events, and news from Nigeria Youths in Ireland.
               </p>
               <p className="text-sm font-medium">Your success is our mission!</p>
             </div>

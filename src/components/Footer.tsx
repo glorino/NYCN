@@ -45,7 +45,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
               <img 
                 src={LOGO_PATH} 
-                alt="NYCN Ireland Logo" 
+                alt="Nigeria Youths in Ireland Logo" 
                 className="h-14 w-14 object-contain"
                 onError={(e) => {
                   // Hide image if it fails to load
@@ -53,8 +53,8 @@ const Footer = () => {
                 }}
               />
               <div>
-                <p className="font-display font-bold text-lg">NYCN Ireland</p>
-                <p className="text-sm opacity-80">National Youth Council of Nigeria</p>
+                <p className="font-display font-bold text-lg">Nigeria Youths in Ireland</p>
+                <p className="text-sm opacity-80">Nigeria Youths in Ireland</p>
               </div>
             </div>
             <p className="text-primary-foreground/80 mb-6 max-w-md">
@@ -98,7 +98,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-primary-foreground/60">
-              © {new Date().getFullYear()} NYCN Ireland Chapter (RN:794640). All rights reserved.
+              © {new Date().getFullYear()} Nigeria Youths in Ireland. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-primary-foreground/60">
               <button 

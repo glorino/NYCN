@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 const WhatsAppChat = () => {
   const phoneNumber = '+353834870106';
-  const message = 'Hello! I\'m interested in NYCN Ireland. Can you provide more information?';
+  const message = 'Hello! I\'m interested in Nigeria Youths in Ireland. Can you provide more information?';
   
   const openWhatsApp = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;

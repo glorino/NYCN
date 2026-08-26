@@ -25,7 +25,7 @@ export async function sendEmail({
   }
   try {
     const info = await transporter.sendMail({
-      from: `"NYCN Ireland" <info@nycnireland.ie>`,
+      from: `"Nigeria Youths in Ireland" <info@nycnireland.ie>`,
       to,
       subject,
       html,

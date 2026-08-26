@@ -56,7 +56,7 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-4 group">
             <img 
               src={LOGO_PATH} 
-              alt="NYCN Ireland Logo" 
+              alt="Nigeria Youths in Ireland Logo" 
               className="h-14 w-14 sm:h-16 sm:w-16 object-contain group-hover:scale-105 transition-transform"
               onError={(e) => {
                 // Hide image if it fails to load
@@ -64,7 +64,7 @@ const Header = () => {
               }}
             />
             <span className={`font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-primary transition-colors ${isScrolled || !isHomePage ? 'text-primary' : 'text-primary'}`}>
-              NYCN Ireland
+              Nigeria Youths in Ireland
             </span>
           </Link>
 

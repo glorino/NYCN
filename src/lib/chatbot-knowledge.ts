@@ -1,4 +1,4 @@
-// Knowledge base for NYCN Ireland Chatbot
+// Knowledge base for Nigeria Youths in Ireland Chatbot
 
 export interface KnowledgeEntry {
   keywords: string[];
@@ -10,7 +10,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
   {
     keywords: ['join', 'member', 'membership', 'become a member', 'how to join', 'sign up', 'register'],
     category: 'membership',
-    response: `To join NYCN Ireland, you have several options:
+    response: `To join Nigeria Youths in Ireland, you have several options:
 
 1. **Fill out our Join Us form** - Click the "Join Us" button in the header
 2. **Contact us directly:**
@@ -45,7 +45,7 @@ Check our Events page for full details and registration!`
   {
     keywords: ['contact', 'reach', 'email', 'phone', 'address', 'location', 'where'],
     category: 'contact',
-    response: `You can reach NYCN Ireland at:
+    response: `You can reach Nigeria Youths in Ireland at:
 
 📧 **Email:** info@nycn.ie
 📞 **Phone:** +353 83 487 0106
@@ -61,7 +61,7 @@ You can also:
   {
     keywords: ['about', 'what is', 'who are', 'organization', 'nycn'],
     category: 'about',
-    response: `NYCN Ireland (RN:794640) is the **National Youth Council of Nigeria, Ireland Chapter**.
+    response: `Nigeria Youths in Ireland (RN:794640) is the **National Youth Council of Nigeria, Ireland Chapter**.
 
 We serve as the cornerstone for Nigerian youth in Ireland, helping them navigate the challenges of living abroad while staying connected to their roots.
 
@@ -106,7 +106,7 @@ We envision a community where every Nigerian youth in Ireland has the support an
     response: `Our leadership team includes:
 
 👔 **Amb. Collins Osazee Idahosa** - Governor, NYCN Europe Chapter
-👔 **Hon. Jeffrey Oronsaye** - Chairman, NYCN Ireland Chapter
+👔 **Hon. Jeffrey Oronsaye** - Chairman, Nigeria Youths in Ireland Chapter
 👔 **Felicia Akinbulejo** - Deputy Chairman
 👔 **Andrew Edeki** - Organising Secretary
 👔 **Emmanuel Femi Olafusi** - Asst. Organising Secretary
@@ -121,7 +121,7 @@ Visit our Team page to learn more about each leader!`
     category: 'social',
     response: `Follow us on social media to stay connected! 📱
 
-🔵 **Facebook:** National Youth Council of Nigeria NYCN Ireland chapter
+🔵 **Facebook:** National Youth Council of Nigeria Nigeria Youths in Ireland chapter
 🔗 **LinkedIn:** National Youth Council of Nigeria Ireland Chapter
 🎵 **TikTok:** @nycnireland
 
@@ -143,7 +143,7 @@ Don't forget to follow us for the latest updates! 🎉`
 🎓 **Education** - Supporting academic growth
 🤝 **Unity** - Working together for common goals
 
-These values guide everything we do at NYCN Ireland.`
+These values guide everything we do at Nigeria Youths in Ireland.`
   },
   {
     keywords: ['advocacy', 'advocate', 'support', 'help'],
@@ -160,7 +160,7 @@ If you need advocacy support or have concerns, please contact us at info@nycn.ie
   {
     keywords: ['statistics', 'stats', 'numbers', 'how many', 'members', 'events', 'years'],
     category: 'stats',
-    response: `NYCN Ireland by the numbers:
+    response: `Nigeria Youths in Ireland by the numbers:
 
 👥 **5k+ Members** - Growing community
 📅 **100+ Events** - Past and upcoming
@@ -171,7 +171,7 @@ We're proud of our growing community and the impact we've made!`
   {
     keywords: ['county', 'counties', 'where', 'locations', 'regions'],
     category: 'location',
-    response: `NYCN Ireland serves Nigerian youth across all 32 counties of Ireland:
+    response: `Nigeria Youths in Ireland serves Nigerian youth across all 32 counties of Ireland:
 
 • Dublin (main office)
 • Cork, Galway, Limerick
@@ -212,7 +212,7 @@ What would you like to know?`
   {
     keywords: ['hello', 'hi', 'hey', 'greetings'],
     category: 'greeting',
-    response: `Hello! 👋 Welcome to NYCN Ireland!
+    response: `Hello! 👋 Welcome to Nigeria Youths in Ireland!
 
 I'm here to help you learn about our organization, events, and how to join our community. 
 
@@ -265,7 +265,7 @@ export const findResponse = (message: string): string => {
   // Default fallback response
   return `Thank you for your message! I can help you with information about:
 
-• **Membership** - How to join NYCN Ireland
+• **Membership** - How to join Nigeria Youths in Ireland
 • **Events** - Upcoming events and registration
 • **Contact** - Email, phone, and location
 • **About Us** - Our mission, vision, and values

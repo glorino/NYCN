@@ -43,8 +43,8 @@ const Hero = () => {
 
           {/* Main Title */}
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 animate-slide-up">
-            National Youth Council
-            <span className="block text-gradient mt-2">of Nigeria, Ireland</span>
+            Nigeria Youths
+            <span className="block text-gradient mt-2">in Ireland</span>
           </h1>
 
           {/* Subtitle */}
