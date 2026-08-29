@@ -109,6 +109,7 @@ We envision a community where every Nigerian youth in Ireland has the support an
 👔 **Hon. Jeffrey Oronsaye** - Chairman, Nigeria Youths in Ireland Chapter
 👔 **Felicia Akinbulejo** - Deputy Chairman
 👔 **Andrew Edeki** - Organising Secretary
+👔 **Goodness Chiamaka Ezeogu** - Assistant Organising Secretary
 👔 **Emmanuel Femi Olafusi** - Asst. Organising Secretary
 👔 **Martins Idemudia** - Public Relations Officer
 👔 **Sunday Anjorin** - Financial Secretary

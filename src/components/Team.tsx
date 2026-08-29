@@ -52,6 +52,11 @@ const teamMembers = [
     role: 'Secretary Administration',
     image: '/team/Vanessa Aigbekaen.jpg',
   },
+  {
+    name: 'Goodness Chiamaka Ezeogu',
+    role: 'Assistant Organising Secretary',
+    image: '/team/Goodness.jpeg',
+  },
 ];
 
 const Team = () => {

@@ -63,6 +63,12 @@ const teamMembers = [
     image: '/team/Vanessa Aigbekaen.jpg',
     bio: 'Managing administrative affairs and organizational coordination.',
   },
+  {
+    name: 'Goodness Chiamaka Ezeogu',
+    role: 'Assistant Organising Secretary',
+    image: '/team/Goodness.jpeg',
+    bio: 'Supporting event coordination and organizational operations.',
+  },
 ];
 
 const TeamPage = () => {
