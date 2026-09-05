@@ -46,6 +46,21 @@ const VotingPage = () => {
     setIsSubmitting(true);
     
     try {
+      // Generate browser fingerprint
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      ctx?.fillText('fingerprint', 0, 0);
+      const canvasData = canvas.toDataURL();
+      
+      const fingerprintData = {
+        screen: `${screen.width}x${screen.height}`,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        language: navigator.language,
+        platform: navigator.platform,
+        canvas: canvasData.slice(-50),
+      };
+      const fingerprint = btoa(JSON.stringify(fingerprintData));
+
       const response = await fetch('/api/voting', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -55,11 +70,23 @@ const VotingPage = () => {
             nomineeName,
           })),
           voterName: voterName.trim() || undefined,
+          fingerprint,
         }),
       });
 
+      const data = await response.json();
+
+      if (response.status === 409) {
+        toast({
+          title: "Already Voted",
+          description: "You have already submitted a nomination. Please try again tomorrow.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       if (!response.ok) {
-        throw new Error('Failed to submit nominations');
+        throw new Error(data.error || 'Failed to submit nominations');
       }
       
       setSubmitted(true);

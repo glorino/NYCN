@@ -18,6 +18,7 @@ try {
 }
 
 const KV_KEY = 'nycn:nominations';
+const VOTERS_KEY = 'nycn:voters';
 
 const categoryNames: Record<number, string> = {
   1: 'Youth Leader of the Year Award',
@@ -38,11 +39,18 @@ interface NominationData {
   voters: string[];
 }
 
+interface VoterRecord {
+  ip: string;
+  fingerprint: string;
+  timestamp: number;
+}
+
 // In-memory fallback storage
 let memoryStore: Record<number, NominationData> = {};
 for (let i = 1; i <= 10; i++) {
   memoryStore[i] = { name: '', count: 0, voters: [] };
 }
+let memoryVoters: VoterRecord[] = [];
 
 async function getNominations(): Promise<Record<number, NominationData>> {
   if (kvAvailable && kv) {
@@ -50,7 +58,7 @@ async function getNominations(): Promise<Record<number, NominationData>> {
       const data = await kv.get(KV_KEY);
       if (data) return data;
     } catch (error) {
-      console.error('Error reading from KV:', error);
+      console.error('Error reading nominations from KV:', error);
     }
   }
   return memoryStore;
@@ -60,15 +68,61 @@ async function saveNominations(nominations: Record<number, NominationData>): Pro
   if (kvAvailable && kv) {
     try {
       await kv.set(KV_KEY, nominations);
-      console.log('Saved to Vercel KV');
+      console.log('Saved nominations to Vercel KV');
       return;
     } catch (error) {
-      console.error('Error saving to KV:', error);
+      console.error('Error saving nominations to KV:', error);
     }
   }
-  // Fallback to memory
   memoryStore = nominations;
-  console.log('Saved to in-memory storage');
+  console.log('Saved nominations to in-memory storage');
+}
+
+async function getVoters(): Promise<VoterRecord[]> {
+  if (kvAvailable && kv) {
+    try {
+      const data = await kv.get(VOTERS_KEY);
+      if (data) return data;
+    } catch (error) {
+      console.error('Error reading voters from KV:', error);
+    }
+  }
+  return memoryVoters;
+}
+
+async function saveVoters(voters: VoterRecord[]): Promise<void> {
+  if (kvAvailable && kv) {
+    try {
+      await kv.set(VOTERS_KEY, voters);
+      console.log('Saved voters to Vercel KV');
+      return;
+    } catch (error) {
+      console.error('Error saving voters to KV:', error);
+    }
+  }
+  memoryVoters = voters;
+  console.log('Saved voters to in-memory storage');
+}
+
+function getClientIp(req: any): string {
+  return req.headers['x-forwarded-for']?.split(',')[0]?.trim() || 
+         req.headers['x-real-ip'] || 
+         req.socket?.remoteAddress || 
+         'unknown';
+}
+
+function parseCookies(cookieHeader: string): Record<string, string> {
+  const cookies: Record<string, string> = {};
+  if (!cookieHeader) return cookies;
+  cookieHeader.split(';').forEach(cookie => {
+    const [name, ...rest] = cookie.split('=');
+    if (name) cookies[name.trim()] = rest.join('=').trim();
+  });
+  return cookies;
+}
+
+function generateCookie(fingerprint: string): string {
+  return `nycn_voted=${fingerprint}; Path=/; Max-Age=${30 * 24 * 60 * 60}; SameSite=Lax; HttpOnly`;
 }
 
 export default async function handler(req: any, res: any) {
@@ -127,13 +181,35 @@ export default async function handler(req: any, res: any) {
         return respond(400, { error: 'Invalid JSON body' });
       }
 
-      const { nominations: submittedNominations, voterName } = parsed || {};
+      const { nominations: submittedNominations, voterName, fingerprint } = parsed || {};
       
       if (!submittedNominations || !Array.isArray(submittedNominations) || submittedNominations.length === 0) {
         return respond(400, { error: 'At least one nomination is required' });
       }
 
+      // Get client IP and fingerprint
+      const clientIp = getClientIp(req);
+      const voterFingerprint = fingerprint || '';
+      
       try {
+        // Check for duplicate vote
+        const voters = await getVoters();
+        const now = Date.now();
+        const oneDay = 24 * 60 * 60 * 1000; // 24 hours cooldown
+        
+        // Check if this IP or fingerprint has voted recently
+        const existingVoter = voters.find(v => {
+          const withinCooldown = (now - v.timestamp) < oneDay;
+          return withinCooldown && (v.ip === clientIp || (voterFingerprint && v.fingerprint === voterFingerprint));
+        });
+
+        if (existingVoter) {
+          return respond(409, { 
+            error: 'You have already submitted a nomination. Please try again tomorrow.',
+            alreadyVoted: true
+          });
+        }
+
         // Get current nominations
         const nominations = await getNominations();
 
@@ -163,6 +239,24 @@ export default async function handler(req: any, res: any) {
 
         // Save updated nominations
         await saveNominations(nominations);
+
+        // Record this voter
+        const newVoter: VoterRecord = {
+          ip: clientIp,
+          fingerprint: voterFingerprint,
+          timestamp: now,
+        };
+        voters.push(newVoter);
+        
+        // Cleanup old records (older than 30 days)
+        const thirtyDays = 30 * 24 * 60 * 60 * 1000;
+        const cleanedVoters = voters.filter(v => (now - v.timestamp) < thirtyDays);
+        await saveVoters(cleanedVoters);
+
+        // Set cookie to prevent duplicate voting
+        const cookieValue = voterFingerprint || `${clientIp}-${now}`;
+        const cookie = generateCookie(cookieValue);
+        res.setHeader('Set-Cookie', cookie);
 
         // Send confirmation email
         if (voterName) {
