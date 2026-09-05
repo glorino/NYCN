@@ -1,5 +1,21 @@
-import { kv } from '@vercel/kv';
 import { sendEmail } from '../_lib/mail.js';
+
+// Try to use Vercel KV if configured, otherwise use in-memory storage
+let kvAvailable = false;
+let kv: any = null;
+
+try {
+  if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
+    const kvModule = await import('@vercel/kv');
+    kv = kvModule.kv;
+    kvAvailable = true;
+    console.log('Vercel KV is available');
+  } else {
+    console.log('Vercel KV not configured, using in-memory storage');
+  }
+} catch (error) {
+  console.log('Vercel KV import failed, using in-memory storage');
+}
 
 const KV_KEY = 'nycn:nominations';
 
@@ -22,29 +38,37 @@ interface NominationData {
   voters: string[];
 }
 
+// In-memory fallback storage
+let memoryStore: Record<number, NominationData> = {};
+for (let i = 1; i <= 10; i++) {
+  memoryStore[i] = { name: '', count: 0, voters: [] };
+}
+
 async function getNominations(): Promise<Record<number, NominationData>> {
-  try {
-    const data = await kv.get<Record<number, NominationData>>(KV_KEY);
-    if (data) return data;
-  } catch (error) {
-    console.error('Error reading from KV:', error);
+  if (kvAvailable && kv) {
+    try {
+      const data = await kv.get(KV_KEY);
+      if (data) return data;
+    } catch (error) {
+      console.error('Error reading from KV:', error);
+    }
   }
-  
-  // Initialize empty if not found
-  const initial: Record<number, NominationData> = {};
-  for (let i = 1; i <= 10; i++) {
-    initial[i] = { name: '', count: 0, voters: [] };
-  }
-  return initial;
+  return memoryStore;
 }
 
 async function saveNominations(nominations: Record<number, NominationData>): Promise<void> {
-  try {
-    await kv.set(KV_KEY, nominations);
-  } catch (error) {
-    console.error('Error saving to KV:', error);
-    throw error;
+  if (kvAvailable && kv) {
+    try {
+      await kv.set(KV_KEY, nominations);
+      console.log('Saved to Vercel KV');
+      return;
+    } catch (error) {
+      console.error('Error saving to KV:', error);
+    }
   }
+  // Fallback to memory
+  memoryStore = nominations;
+  console.log('Saved to in-memory storage');
 }
 
 export default async function handler(req: any, res: any) {
@@ -110,7 +134,7 @@ export default async function handler(req: any, res: any) {
       }
 
       try {
-        // Get current nominations from KV
+        // Get current nominations
         const nominations = await getNominations();
 
         // Process each nomination
@@ -137,7 +161,7 @@ export default async function handler(req: any, res: any) {
           }
         }
 
-        // Save updated nominations to KV
+        // Save updated nominations
         await saveNominations(nominations);
 
         // Send confirmation email
