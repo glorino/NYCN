@@ -180,6 +180,11 @@ const VotingPage = () => {
           </div>
 
           {/* Categories Grid */}
+          <div className="max-w-5xl mx-auto mb-6">
+            <p className="text-center text-muted-foreground text-sm">
+              Fill in only the categories you want to nominate for. All fields are optional.
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {categories.map((category, index) => (
               <div 
@@ -204,7 +209,7 @@ const VotingPage = () => {
                 <div className="relative">
                   <Input
                     type="text"
-                    placeholder="Enter nominee's name..."
+                    placeholder="Optional - skip if not nominating"
                     value={nominations[category.id] || ''}
                     onChange={(e) => handleNominationChange(category.id, e.target.value)}
                     className="w-full bg-white/80 backdrop-blur-sm border-2 border-white/50 focus:border-green-400 focus:ring-green-400 text-foreground placeholder:text-muted-foreground/60 rounded-xl h-12"
