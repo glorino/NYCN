@@ -168,7 +168,7 @@ const VotingPage = () => {
           <div className="text-center max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6 animate-slide-up">
               <Trophy className="w-4 h-4" />
-              NYCN Ireland Youth Festival
+              NYCN Ireland Youth Festival 2026
             </div>
             
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up stagger-1">
@@ -281,7 +281,7 @@ const VotingPage = () => {
       <section className="bg-gradient-to-r from-green-600 via-yellow-500 to-green-600 py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-white font-display text-xl md:text-2xl font-bold">
-            🇳🇬 Irish Youth Festival Awards 🇮🇪
+            🇳🇬 Irish Youth Festival Awards 2026 🇮🇪
           </p>
           <p className="text-white/80 mt-2">
             Celebrating Nigerian Youth Excellence in Ireland

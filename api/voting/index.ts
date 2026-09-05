@@ -277,7 +277,7 @@ export default async function handler(req: any, res: any) {
         if (voterName) {
           const emailHtml = `<div style="font-family:Arial;max-width:600px;margin:auto;padding:20px;background:#f9f9f9">
             <div style="background:linear-gradient(135deg,#16a34a,#15803d);padding:30px;border-radius:10px 10px 0 0;text-align:center">
-              <h1 style="color:white;margin:0">🏆 NYCN Ireland Youth Festival</h1>
+              <h1 style="color:white;margin:0">🏆 NYCN Ireland Youth Festival 2026</h1>
               <p style="color:#bbf7d0;margin:10px 0 0">Award Nominations</p>
             </div>
             <div style="background:white;padding:30px;border-radius:0 0 10px 10px">
