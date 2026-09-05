@@ -20,6 +20,7 @@ const categories = [
 
 const VotingPage = () => {
   const [nominations, setNominations] = useState<Record<number, string>>({});
+  const [voterName, setVoterName] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -44,16 +45,38 @@ const VotingPage = () => {
 
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    
-    toast({
-      title: "Nominations submitted! 🎉",
-      description: `You've submitted ${filledNominations.length} nomination(s). Thank you!`,
-    });
+    try {
+      const response = await fetch('/api/voting', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nominations: filledNominations.map(([categoryId, nomineeName]) => ({
+            categoryId: parseInt(categoryId),
+            nomineeName,
+          })),
+          voterName: voterName.trim() || undefined,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit nominations');
+      }
+      
+      setSubmitted(true);
+      
+      toast({
+        title: "Nominations submitted! 🎉",
+        description: `You've submitted ${filledNominations.length} nomination(s). Thank you!`,
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit nominations. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -142,6 +165,20 @@ const VotingPage = () => {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12 sm:py-16">
         <form onSubmit={handleSubmit}>
+          {/* Voter Name */}
+          <div className="max-w-md mx-auto mb-8 animate-slide-up">
+            <label className="block text-sm font-medium text-foreground mb-2">
+              Your Name (Optional)
+            </label>
+            <Input
+              type="text"
+              placeholder="Enter your name..."
+              value={voterName}
+              onChange={(e) => setVoterName(e.target.value)}
+              className="w-full bg-white/80 backdrop-blur-sm border-2 border-green-200 focus:border-green-400 focus:ring-green-400 text-foreground placeholder:text-muted-foreground/60 rounded-xl h-12"
+            />
+          </div>
+
           {/* Categories Grid */}
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {categories.map((category, index) => (

@@ -11,6 +11,7 @@ import VotingPage from "./pages/VotingPage";
 import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/admin/Login";
 import AdminDashboard from "./pages/admin/Dashboard";
+import VotingDashboard from "./pages/admin/VotingDashboard";
 import EventForm from "./pages/admin/EventForm";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import "@/lib/debug";
@@ -35,6 +36,14 @@ const App = () => (
             element={
               <ProtectedRoute>
                 <AdminDashboard />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/admin/voting" 
+            element={
+              <ProtectedRoute>
+                <VotingDashboard />
               </ProtectedRoute>
             } 
           />
