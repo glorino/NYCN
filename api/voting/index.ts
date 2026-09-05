@@ -197,15 +197,14 @@ export default async function handler(req: any, res: any) {
         const now = Date.now();
         const oneDay = 24 * 60 * 60 * 1000; // 24 hours cooldown
         
-        // Check if this IP or fingerprint has voted recently
+        // Check if this IP or fingerprint has voted (permanent block)
         const existingVoter = voters.find(v => {
-          const withinCooldown = (now - v.timestamp) < oneDay;
-          return withinCooldown && (v.ip === clientIp || (voterFingerprint && v.fingerprint === voterFingerprint));
+          return v.ip === clientIp || (voterFingerprint && v.fingerprint === voterFingerprint);
         });
 
         if (existingVoter) {
           return respond(409, { 
-            error: 'You have already submitted a nomination. Please try again tomorrow.',
+            error: 'You have already submitted a nomination. Each person can only vote once.',
             alreadyVoted: true
           });
         }
@@ -248,9 +247,9 @@ export default async function handler(req: any, res: any) {
         };
         voters.push(newVoter);
         
-        // Cleanup old records (older than 30 days)
-        const thirtyDays = 30 * 24 * 60 * 60 * 1000;
-        const cleanedVoters = voters.filter(v => (now - v.timestamp) < thirtyDays);
+        // Cleanup old records (older than 34 days)
+        const thirtyFourDays = 34 * 24 * 60 * 60 * 1000;
+        const cleanedVoters = voters.filter(v => (now - v.timestamp) < thirtyFourDays);
         await saveVoters(cleanedVoters);
 
         // Set cookie to prevent duplicate voting

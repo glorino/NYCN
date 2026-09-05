@@ -79,7 +79,7 @@ const VotingPage = () => {
       if (response.status === 409) {
         toast({
           title: "Already Voted",
-          description: "You have already submitted a nomination. Please try again tomorrow.",
+          description: "You have already submitted a nomination. Each person can only vote once.",
           variant: "destructive",
         });
         return;
