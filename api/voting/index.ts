@@ -148,6 +148,22 @@ export default async function handler(req: any, res: any) {
     }
   }
 
+  // DELETE - Reset all nominations (admin only)
+  if (req.method === 'DELETE') {
+    try {
+      const emptyNominations: Record<number, NominationData> = {};
+      for (let i = 1; i <= 10; i++) {
+        emptyNominations[i] = { name: '', count: 0, voters: [] };
+      }
+      await saveNominations(emptyNominations);
+      await saveVoters([]);
+      return res.status(200).json({ success: true, message: 'All nominations cleared' });
+    } catch (error) {
+      console.error('Error clearing nominations:', error);
+      return res.status(500).json({ error: 'Failed to clear nominations' });
+    }
+  }
+
   // POST - Submit nominations
   if (req.method === 'POST') {
     let body;

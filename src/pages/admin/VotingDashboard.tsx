@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, RefreshCw, Trophy, Users, TrendingUp, LogOut, Download } from 'lucide-react';
+import { ArrowLeft, RefreshCw, Trophy, Users, TrendingUp, LogOut, Download, Trash2 } from 'lucide-react';
 import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
 import { useNavigate } from 'react-router-dom';
@@ -94,6 +94,30 @@ const VotingDashboard = () => {
     });
   };
 
+  const handleResetAll = async () => {
+    if (!window.confirm('Are you sure you want to delete ALL nominations? This cannot be undone!')) {
+      return;
+    }
+    try {
+      const response = await fetch('/api/voting', { method: 'DELETE' });
+      if (response.ok) {
+        toast({
+          title: "Reset Complete",
+          description: "All nominations have been cleared.",
+        });
+        fetchNominations();
+      } else {
+        throw new Error('Failed to reset');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to reset nominations",
+        variant: "destructive",
+      });
+    }
+  };
+
   const totalVotes = nominations.reduce((sum, n) => sum + n.voteCount, 0);
   const categoriesWithVotes = nominations.filter(n => n.voteCount > 0).length;
   const topNominee = nominations.reduce((top, n) => n.voteCount > (top?.voteCount || 0) ? n : top, nominations[0]);
@@ -153,6 +177,15 @@ const VotingDashboard = () => {
               >
                 <Download className="w-4 h-4 mr-2" />
                 Export CSV
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={handleResetAll}
+                className="hidden sm:inline-flex text-red-600 hover:text-red-700 hover:bg-red-50 border-red-200"
+              >
+                <Trash2 className="w-4 h-4 mr-2" />
+                Reset All
               </Button>
               <span className="text-sm text-muted-foreground hidden md:inline">
                 Welcome, {user?.username}
@@ -228,6 +261,10 @@ const VotingDashboard = () => {
           <Button variant="outline" size="sm" onClick={exportToCSV} className="flex-1">
             <Download className="w-4 h-4 mr-2" />
             Export
+          </Button>
+          <Button variant="outline" size="sm" onClick={handleResetAll} className="flex-1 text-red-600 border-red-200">
+            <Trash2 className="w-4 h-4 mr-2" />
+            Reset
           </Button>
         </div>
 
