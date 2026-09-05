@@ -11,6 +11,7 @@ const navLinks = [
   { href: '/', label: 'Home', isPage: true },
   { href: '#about', label: 'About', isPage: false },
   { href: '/events', label: 'Events', isPage: true },
+  { href: '/voting', label: 'Vote', isPage: true },
   { href: '/blog', label: 'Blog', isPage: true },
   { href: '/team', label: 'Team', isPage: true },
   { href: '#contact', label: 'Contact', isPage: false },

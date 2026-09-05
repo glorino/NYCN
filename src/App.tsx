@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import EventsPage from "./pages/EventsPage";
 import TeamPage from "./pages/TeamPage";
 import BlogPage from "./pages/BlogPage";
+import VotingPage from "./pages/VotingPage";
 import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/admin/Login";
 import AdminDashboard from "./pages/admin/Dashboard";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/team" element={<TeamPage />} />
+          <Route path="/voting" element={<VotingPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route 
