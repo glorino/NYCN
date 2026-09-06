@@ -1,9 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Trophy, Send, Sparkles, PartyPopper, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+
+interface Ad {
+  id: string;
+  imageUrl: string;
+  linkUrl?: string;
+  position: string;
+  active: boolean;
+}
 
 const categories = [
   { id: 1, emoji: '🏆', name: 'Youth Leader of the Year Award', color: 'from-yellow-400 to-orange-500', bg: 'bg-gradient-to-br from-yellow-50 to-orange-50', border: 'border-yellow-300' },
@@ -23,7 +31,15 @@ const VotingPage = () => {
   const [voterName, setVoterName] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [sidebarAds, setSidebarAds] = useState<Ad[]>([]);
   const { toast } = useToast();
+
+  useEffect(() => {
+    fetch('/api/ads')
+      .then(res => res.json())
+      .then(data => setSidebarAds(data.filter((ad: Ad) => ad.position === 'sidebar')))
+      .catch(() => {});
+  }, []);
 
   const handleNominationChange = (categoryId: number, value: string) => {
     setNominations(prev => ({ ...prev, [categoryId]: value }));
@@ -191,28 +207,31 @@ const VotingPage = () => {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12 sm:py-16">
-        <form onSubmit={handleSubmit}>
-          {/* Voter Name */}
-          <div className="max-w-md mx-auto mb-8 animate-slide-up">
-            <label className="block text-sm font-medium text-foreground mb-2">
-              Your Name (Optional)
-            </label>
-            <Input
-              type="text"
-              placeholder="Enter your name..."
-              value={voterName}
-              onChange={(e) => setVoterName(e.target.value)}
-              className="w-full bg-white/80 backdrop-blur-sm border-2 border-green-200 focus:border-green-400 focus:ring-green-400 text-foreground placeholder:text-muted-foreground/60 rounded-xl h-12"
-            />
-          </div>
+        <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+          {/* Form Section */}
+          <div className="flex-1">
+            <form onSubmit={handleSubmit}>
+              {/* Voter Name */}
+              <div className="max-w-md mx-auto mb-8 animate-slide-up">
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Your Name (Optional)
+                </label>
+                <Input
+                  type="text"
+                  placeholder="Enter your name..."
+                  value={voterName}
+                  onChange={(e) => setVoterName(e.target.value)}
+                  className="w-full bg-white/80 backdrop-blur-sm border-2 border-green-200 focus:border-green-400 focus:ring-green-400 text-foreground placeholder:text-muted-foreground/60 rounded-xl h-12"
+                />
+              </div>
 
-          {/* Categories Grid */}
-          <div className="max-w-5xl mx-auto mb-6">
-            <p className="text-center text-muted-foreground text-sm">
-              Fill in only the categories you want to nominate for. All fields are optional.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {/* Categories Grid */}
+              <div className="max-w-5xl mx-auto mb-6">
+                <p className="text-center text-muted-foreground text-sm">
+                  Fill in only the categories you want to nominate for. All fields are optional.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {categories.map((category, index) => (
               <div 
                 key={category.id}
@@ -275,6 +294,28 @@ const VotingPage = () => {
             </p>
           </div>
         </form>
+        </div>
+
+        {/* Sidebar Ads */}
+        {sidebarAds.length > 0 && (
+          <aside className="lg:w-80 shrink-0">
+            <div className="sticky top-24 space-y-4">
+              <p className="text-xs text-muted-foreground text-center uppercase tracking-wider">Advertisement</p>
+              {sidebarAds.map(ad => (
+                <div key={ad.id} className="rounded-xl overflow-hidden border border-border bg-card">
+                  {ad.linkUrl ? (
+                    <a href={ad.linkUrl} target="_blank" rel="noopener noreferrer">
+                      <img src={ad.imageUrl} alt="Advertisement" className="w-full h-auto" />
+                    </a>
+                  ) : (
+                    <img src={ad.imageUrl} alt="Advertisement" className="w-full h-auto" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </aside>
+        )}
+        </div>
       </main>
 
       {/* Footer Banner */}
