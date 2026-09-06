@@ -12,7 +12,6 @@ import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/admin/Login";
 import AdminDashboard from "./pages/admin/Dashboard";
 import VotingDashboard from "./pages/admin/VotingDashboard";
-import AdManager from "./pages/admin/AdManager";
 import EventForm from "./pages/admin/EventForm";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import "@/lib/debug";
@@ -45,14 +44,6 @@ const App = () => (
             element={
               <ProtectedRoute>
                 <VotingDashboard />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/admin/ads" 
-            element={
-              <ProtectedRoute>
-                <AdManager />
               </ProtectedRoute>
             } 
           />
